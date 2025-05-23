@@ -23,7 +23,7 @@ public class PromptGen
             "What’s a small joy you experienced today that you don’t want to forget?",
         ];
         Random randomGenerator = new Random();
-        int index = randomGenerator.Next(0, 14);
+        int index = randomGenerator.Next(0, 15);
         return prompts[index];
     }
 }
