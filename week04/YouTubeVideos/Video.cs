@@ -18,10 +18,10 @@ class Video
     public string _title;
     public string _author;
     public int _lengthInSeconds;
-    public List<Comment> _comments;
+    public List<Comment> _comments = new List<Comment>();
 
     // Constructor
-    Video(string title, string author, int lengthInSeconds)
+    public Video(string title, string author, int lengthInSeconds)
     {
         _title = title;
         _author = author;

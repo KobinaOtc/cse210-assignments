@@ -15,7 +15,7 @@ class Comment
     public string _text;
 
     // Consturctor
-    Comment(string commenterName, string text)
+    public Comment(string commenterName, string text)
     {
         _commenterName = commenterName;
         _text = text;
@@ -26,5 +26,6 @@ class Comment
     {
         Console.WriteLine($"Name: {_commenterName}");
         Console.WriteLine($"Comment: {_text}");
+        Console.WriteLine();
     }
 }

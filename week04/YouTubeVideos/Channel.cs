@@ -14,7 +14,7 @@ class Channel
     public string _channelName;
 
     // Constructor
-    Channel(string channelName)
+    public Channel(string channelName)
     {
         _channelName = channelName;
     }
