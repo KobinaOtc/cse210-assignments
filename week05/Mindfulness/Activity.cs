@@ -5,6 +5,8 @@ class Activity
     protected string _endMessage;
     protected List<string> _prompts = new List<string>();
     private List<string> _animationLines = new List<string>();
+    Random randomGen = new Random();
+
 
     // Constructors
     public Activity()
@@ -15,6 +17,7 @@ class Activity
     public Activity(string startMessage)
     {
         _startMessage = startMessage;
+        _endMessage = "Well done!";
     }
     public Activity(string startMessage, string endMessage)
     {
@@ -24,6 +27,61 @@ class Activity
 
 
     // Methods
+    public int GetSeconds(string activity)
+    {
+        Console.WriteLine($"Welcome to the {activity} Activity");
+        Console.WriteLine();
+        Console.WriteLine(_startMessage);
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.Write("How long, in seconds, would you like for your session? ");
+        string secStr = Console.ReadLine();
+        int secs = int.Parse(secStr);
+        return secs;
+    }
+    public void GetReady()
+    {
+        Console.WriteLine("Get Ready...");
+        LoadingAnimation(3);
+        Console.WriteLine();
+    }
+
+    private int IndexGen(List<int> indexes)
+    {
+        int index = randomGen.Next(0, _prompts.Count - 1);
+        int counter = 0;
+        while (indexes.Contains(index) && counter < 100)
+        {
+            index = randomGen.Next(0, _prompts.Count - 1);
+            counter++;
+        }
+        return index;
+    }
+    protected void GetRandomPrompt(int secs, List<int> indexes, string activity)
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(secs);
+        if (activity == "reflection")
+        {
+            while (DateTime.Now < endTime)
+            {
+                int i = IndexGen(indexes);
+                Console.WriteLine();
+                Console.Write("> ");
+                Console.Write(_prompts[i]);
+                Console.Write(" ");
+                LoadingAnimation(8);
+                Console.WriteLine();
+                indexes.Add(i);
+            }
+        }
+        else if (activity == "listing")
+        {
+            int i = IndexGen(indexes);
+            Console.WriteLine($"------{_prompts[i]}------");
+            indexes.Add(i);
+        }
+    }
     public void LoadingAnimation(int secs)
     {
         _animationLines.Add("|");
