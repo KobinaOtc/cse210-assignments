@@ -1,0 +1,4 @@
+0
+Simple goal|Jungle|Go on an adventure in the jungle|100|False
+Eternal Goal|Read my Scriptures|Spend at least 5 min reading my scriptures|35
+Checklist Goal|Fast|Fast and pay an honest fast offering.|62|6|1600|0|False

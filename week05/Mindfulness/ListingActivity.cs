@@ -1,7 +1,5 @@
 class ListingActivity : Activity
 {
-    private List<int> _usedIndex = new List<int>();
-    private List<string> _reflections = new List<string>();
     public ListingActivity() : base() { }
     public ListingActivity(string startMessage) : base(startMessage) { }
 
