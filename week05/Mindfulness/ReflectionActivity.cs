@@ -1,6 +1,5 @@
 class ReflectionActivity : Activity
 {
-    private List<int> _usedIndex = new List<int>();
     public ReflectionActivity() : base() { }
     public ReflectionActivity(string startMessage) : base(startMessage) { }
 

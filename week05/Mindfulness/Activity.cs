@@ -4,6 +4,11 @@ class Activity
     protected string _startMessage;
     protected string _endMessage;
     protected List<string> _prompts = new List<string>();
+    protected List<int> _usedIndex = new List<int>();
+    protected List<string> _reflections = new List<string>();
+    protected string _activityName;
+    protected int _duration;
+
     private List<string> _animationLines = new List<string>();
     Random randomGen = new Random();
 
